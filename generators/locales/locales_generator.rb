@@ -1,3 +1,10 @@
+# most of this code was ripped and customized from the twitter-bootstrap-rails gem
+# github repo:
+#   https://github.com/seyhunak/twitter-bootstrap-rails
+# generator source file: 
+#   lib/generators/bootstrap/themed/themed_generator.rb
+#   https://github.com/seyhunak/twitter-bootstrap-rails/blob/master/lib/generators/bootstrap/themed/themed_generator.rb
+
 require 'rails'
 require 'rails/generators'
 require 'rails/generators/generated_attribute'
