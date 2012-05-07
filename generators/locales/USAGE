@@ -1,0 +1,9 @@
+Description:
+    simple generator example to create locales for active record models (http://guides.rubyonrails.org/generators.html)
+
+Example:
+    rails generate locales model_name
+
+    This will create:
+        config/locales/models/model_names/en.yml
+        config/locales/views/model_names/en.yml

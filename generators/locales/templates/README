@@ -1,0 +1,16 @@
+===============================================================================
+
+Some setup you must do manually if you haven't yet:
+
+  Ensure you have the models and views locales auto loaded in your environment.
+
+  Here is an example of how to load the models and views locales in the
+  config/application.rb:
+
+       models = Dir[Rails.root.join('config', 'locales', 'models', '**/*.yml').to_s]
+       views  = Dir[Rails.root.join('config', 'locales', 'views', '**/*.yml').to_s]
+
+       config.i18n.load_path += models + views
+
+  See (http://guides.rubyonrails.org/generators.html) for more information.
+===============================================================================
