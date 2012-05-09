@@ -25,13 +25,13 @@ Just clone the project and copy the generators folder to your rails project.
 
 Now you can use the locales generator in your rails 3+ project folder.
 
-For example, say you have a campaign table in your database and a campaigns resource controller your project that you need locales for:
+If a campaigns table existed in your database you could run:
 
 ```shell
 rails g locales campaigns
 ```
 
-Here's what it would create:
+And here's what it would create:
 
 - config/locales/models/campaigns/en.yml
 
@@ -50,7 +50,7 @@ If the campaigns table had the following schema:
 +-------------+--------------+------+-----+---------+----------------+	
 </pre>
 
-The following would be generated for active record i18n translation hooks:
+The following would be generated for active record i18n translation:
 
 <pre>
 en:
@@ -76,7 +76,7 @@ en:
 
 - config/locales/views/campaigns/en.yml
 
-The following would be generated for action views translation *helpers* hooks:
+The following would be generated for action views translation *helpers*:
 
 <pre>
 	en:
