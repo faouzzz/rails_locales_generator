@@ -1,9 +1,9 @@
 rails_locales_generator
 =======================
 
-simple generator to create Rails 3+ i18n locales for active record models and active view helpers 
+A rails generator to create Rails 3+ i18n locales for active record models and active view helpers. Read over http://guides.rubyonrails.org/i18n.html if you haven't already.
 
-http://guides.rubyonrails.org/i18n.html
+The generator will create a folder structure in your project's config/locales folder like the following for a resource named campaigns:
 
 <pre>
 |-models
@@ -20,6 +20,10 @@ Get started
 Just clone the project and copy the generators folder to your rails 3+ project.
 
 Now you can use the locales generator in your rails 3+ project folder.
+
+*You need to have some controller/model files in place for the generator to know what to generate.*
+
+For example, if you *already* have scaffold resource named campaigns in your project:
 
 ```shell
 rails g locales campaigns
@@ -88,4 +92,17 @@ en:
 	      title: "Edit Campaign"
 	    show:
 	      title: "Campaign"	
-</pre>	
+</pre>
+
+Next, ensure you have the models and views locales auto loaded in your environment.
+
+Here is an example of how to load the models and views locales in the
+config/application.rb:
+
+```ruby
+     models = Dir[Rails.root.join('config', 'locales', 'models', '**/*.yml').to_s]
+     views  = Dir[Rails.root.join('config', 'locales', 'views', '**/*.yml').to_s]
+
+     config.i18n.load_path += models + views
+````
+	
