@@ -27,7 +27,7 @@ rails g locales campaigns
 
 Here's what it would create:
 
-1. config/locales/models/campaigns/en.yml
+- config/locales/models/campaigns/en.yml
 
 <pre>
 en:
@@ -51,7 +51,7 @@ en:
             active: "Active"
 </pre>
 
-2. config/locales/views/campaigns/en.yml
+- config/locales/views/campaigns/en.yml
 
 <pre>
 	en:
