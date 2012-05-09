@@ -1,9 +1,12 @@
 Description:
-    simple generator example to create locales for active record models (http://guides.rubyonrails.org/generators.html)
+    rails 3+ generator to create locales files for active record models 
+    and action view helpers (submit & button)
+    
+    If you haven't already read: http://guides.rubyonrails.org/i18n.html
 
 Example:
-    rails generate locales model_name
+    rails generate locales campaigns
 
     This will create:
-        config/locales/models/model_names/en.yml
-        config/locales/views/model_names/en.yml
+        config/locales/models/campaigns/en.yml
+        config/locales/views/campaigns/en.yml
