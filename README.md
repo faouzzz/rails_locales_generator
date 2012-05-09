@@ -1,7 +1,9 @@
 rails_locales_generator
 =======================
 
-A Rails 3+ generator that creates the i18n locales files for active record models and action view helpers (i.e., submit & button). 
+A Rails 3+ generator that creates the i18n locales files for active record models and action view helpers (i.e., submit & button).
+
+*Helps separate model and model attribute names from text inside views.*
 
 Read over http://guides.rubyonrails.org/i18n.html if you haven't already.
 
@@ -23,7 +25,7 @@ Just clone the project and copy the generators folder to your rails project.
 
 Now you can use the locales generator in your rails 3+ project folder.
 
-For example, say you have a campaign model and campaigns resource controller in your project:
+For example, say you have a campaign table in your database and a campaigns resource controller your project that you need locales for:
 
 ```shell
 rails g locales campaigns
@@ -32,6 +34,23 @@ rails g locales campaigns
 Here's what it would create:
 
 - config/locales/models/campaigns/en.yml
+
+If the campaigns table had the following schema:
+
+<pre>
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| id          | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name        | varchar(50)  | YES  | UNI | NULL    |                |
+| description | varchar(255) | YES  |     |         |                |
+| active      | tinyint(1)   | YES  | MUL | 1       |                |
+| created_at  | datetime     | NO   | MUL | NULL    |                |
+| updated_at  | datetime     | NO   | MUL | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+	
+</pre>
+
+The following would be generated for active record i18n translation hooks:
 
 <pre>
 en:
@@ -56,6 +75,8 @@ en:
 </pre>
 
 - config/locales/views/campaigns/en.yml
+
+The following would be generated for action views translation *helpers* hooks:
 
 <pre>
 	en:
